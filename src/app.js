@@ -26,9 +26,14 @@ const analyticsRoutes = require('./routes/analyticsRoutes');
 // }));
 
 app.use(cors({
-  origin: 'https://ticxchange.netlify.app',
+  origin: [
+    'https://ticxchange.netlify.app',
+    'http://localhost:3000',
+    'http://localhost:5173',
+    'http://localhost:5000',
+  ],
   credentials: true,
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
   exposedHeaders: ['set-cookie']
 }));
